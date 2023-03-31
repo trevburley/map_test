@@ -18,4 +18,4 @@ use Illuminate\Support\Facades\Route;
     return $request->user();
 });*/
 
-Route::get('/getMapCoords', [\App\Http\Controllers\ApiController::class, 'getMapCoords']);
+Route::get('/getMapCoords/', [\App\Http\Controllers\ApiController::class, 'getMapCoords']);
