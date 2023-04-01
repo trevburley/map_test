@@ -11,46 +11,20 @@ class ApiController extends Controller
 {
     public function getMapCoords() : JsonResponse
     {
-        $iteration = rand(0,2);
-        $coords1 = [
+        $coords = [
             [
                 'gps' => [-0.957996, 50.851143],
-                'color' => '#bd0000'
+                'color' => '#bd0000',
+                'speed' => 60,
+                'destination' => [-1.110177, 50.870443]
             ],
             [
                 'gps' => [-0.984861, 50.849422],
-                'color' => '#bd0000'
+                'color' => '#00bd00',
+                'speed' => 100,
+                'destination' => [-0.8782872351977768, 50.968508234662664]
             ]
         ];
-
-        $coords2 = [
-            [
-                'gps' => [-0.957996, 50.851143],
-                'color' => '#00bd00'
-            ],
-            [
-                'gps' => [-0.984861, 50.849422],
-                'color' => '#00bd00'
-            ]
-        ];
-
-        $coords3 = [
-            [
-                'gps' => [-0.957996, 50.851143],
-                'color' => '#0000bd'
-            ],
-            [
-                'gps' => [-0.984861, 50.849422],
-                'color' => '#0000bd'
-            ]
-        ];
-
-        $coords = match ($iteration) {
-            0 => $coords1,
-            1 => $coords2,
-            2 => $coords3,
-            default => $coords1,
-        };
 
         return response()->json($coords);
     }
